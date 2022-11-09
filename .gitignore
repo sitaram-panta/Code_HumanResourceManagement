@@ -1,1 +1,4 @@
-C:\github project\sitaram-learner\folderss
+# Ignore any files in /bin and /obj Folders
+**/bin/*
+**/obj/*
+folderss/nOT TO PUSH.txt
