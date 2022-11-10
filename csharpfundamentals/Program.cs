@@ -1,6 +1,6 @@
 ﻿
 // Console.WriteLine(employee_Name+ "," +age+ "," +weight+ "," +passport);
-    // Console.WriteLine("{0},{1},{2},{3},{4}",employee_Name,age,weight,passport,dt);
+// Console.WriteLine("{0},{1},{2},{3},{4}",employee_Name,age,weight,passport,dt);
 // Console.WriteLine("Hello, World!");
 // DateTime x = DateTime.Now;
 // Console.WriteLine(x);
