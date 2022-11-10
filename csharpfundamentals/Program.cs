@@ -14,7 +14,6 @@ byte age =  27;
 string weight = "60kg";
 bool passport = true;
 DateTime dateOfBirth = new DateTime(2052, 10, 23);
-
 Console.WriteLine(employee_Name);
 Console.WriteLine(age);
 Console.WriteLine(weight);
