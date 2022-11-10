@@ -13,22 +13,47 @@
 
 // c# is multi-paradigm language
 
-class Person
-{
-    public string name;
-    public byte age;
+// class Person
+// {
+//     public string name;
+//     public byte age;
 
-public string GetLegalGreeting()
+// public string GetLegalGreeting()
+// {
+//     if(age < 18)
+// {
+//     return "you are under age";
+// }
+//     else 
+// {
+//     return "you are adult now";
+// }
+
+// }
+
+// }
+
+class students
 {
-    if(age < 18)
-{
-    return "you are under age";
-}
-    else 
-{
-    return "you are adult now";
-}
+       public string section;
+        public int semester;
+ public string message()
+  {
+    if(semester < 5 )
+    {
+         return "you are on progress";
+
+    }
+
+    else
+    {
+        return "you are going to be a beast";
+
+    }
+   
+}     
+
 
 }
 
-}
+
