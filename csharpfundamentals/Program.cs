@@ -20,7 +20,15 @@ Console.WriteLine(weight);
 Console.WriteLine(passport);
 Console.WriteLine(dateOfBirth);
 
-    
+// object created
+    Person person1 = new();
+    person1.name = "Sitaram";
+    person1.age = 12;
+
+    string message = person1.GetLegalGreeting();
+    Console.WriteLine(message);
+
+
 
 
 
