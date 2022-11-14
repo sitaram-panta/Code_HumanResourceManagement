@@ -32,12 +32,12 @@
 // Create an object from that class in Main() method and print corresponding field values.
  
 
-students student = new();
-student.section = "first, second, third, fourth, fifth, sixth, seventh";
-student.semester = 4;
+// students student = new();
+// student.section = "first, second, third, fourth, fifth, sixth, seventh";
+// student.semester = 4;
 
-string suggestion = student.message();
-Console.WriteLine(suggestion);
+// string suggestion = student.message();
+// Console.WriteLine(suggestion);
 
 
 

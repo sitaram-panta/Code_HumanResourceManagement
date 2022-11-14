@@ -33,27 +33,39 @@
 
 // }
 
-class students
-{
-       public string section;
-        public int semester;
- public string message()
-  {
-    if(semester < 5 )
-    {
-         return "you are on progress";
+// class students
+// {
+//        public string section;
+//         public int semester;
+//  public string message()
+//   {
+//     if(semester < 5 )
+//     {
+//          return "you are on progress";
 
-    }
+//     }
 
-    else
-    {
-        return "you are going to be a beast";
+//     else
+//     {
+//         return "you are going to be a beast";
 
-    }
+//     }
    
-}     
+// }     
+// }
 
-
+class program
+{
+public void show()
+    {
+        Console.WriteLine("welcome to C sharp programming");
+        Console.WriteLine("hey bro, what's up!");
+        Console.WriteLine("Please try harder!..");
+    }   
+  
+ static void Main()
+{
+        program p1 = new program();
+        p1.show();
+    }
 }
-
-
