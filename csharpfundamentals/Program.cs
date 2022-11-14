@@ -39,6 +39,7 @@
 // string suggestion = student.message();
 // Console.WriteLine(suggestion);
 
+// /Classwork: Ask user to enter his name and convert that to uppercase and print on console
 
 
 
