@@ -1,6 +1,3 @@
-// programming paradigms
-
-// c# is object-oriented language
 
 // procedural: C, Pascal, Basic, go
 
@@ -54,3 +51,28 @@
 
 
 
+<<<<<<< HEAD
+=======
+}
+
+// class students
+// {
+//     public string section;
+//     public int semester;
+//     public string message()
+//     {
+//         if (semester < 5)
+//         {
+//             return "you are on progress";
+
+//         }
+
+//         else
+//         {
+//             return "you are going to be a beast";
+
+//         }
+
+//     }
+// }
+>>>>>>> 4e57e900f28b39be109058ef570d324ded373be9

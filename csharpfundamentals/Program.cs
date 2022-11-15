@@ -82,6 +82,6 @@ else if (n == 5)
 // get a number from a user and do following :
 // 1. If number is divisible by 2,  print "its even number"
 // 2. If number is divisible by 3, print "Its multiple of 3"
-// 3. If number is divisible by 3 and 5, print "its multiple of 3 and 5"
+// 3. If number is divisible by 3 and 5, print "its multiple of 3 and 5
 
 
