@@ -105,7 +105,7 @@
 // //     System.Console.WriteLine(i);
 // // }
 
-// // int i = 1;
+// // int i = 1; 
 // // while (i <= 100)
 // // {
 // //     Console.Write("jhare" + " ");
