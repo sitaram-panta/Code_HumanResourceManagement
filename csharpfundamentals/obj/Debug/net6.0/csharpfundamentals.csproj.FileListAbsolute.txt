@@ -1,0 +1,15 @@
+C:\github project\sitaram-learner\csharpfundamentals\obj\Debug\net6.0\csharpfundamentals.csproj.AssemblyReference.cache
+C:\github project\sitaram-learner\csharpfundamentals\obj\Debug\net6.0\csharpfundamentals.GeneratedMSBuildEditorConfig.editorconfig
+C:\github project\sitaram-learner\csharpfundamentals\obj\Debug\net6.0\csharpfundamentals.AssemblyInfoInputs.cache
+C:\github project\sitaram-learner\csharpfundamentals\obj\Debug\net6.0\csharpfundamentals.AssemblyInfo.cs
+C:\github project\sitaram-learner\csharpfundamentals\obj\Debug\net6.0\csharpfundamentals.csproj.CoreCompileInputs.cache
+C:\github project\sitaram-learner\csharpfundamentals\bin\Debug\net6.0\csharpfundamentals.exe
+C:\github project\sitaram-learner\csharpfundamentals\bin\Debug\net6.0\csharpfundamentals.deps.json
+C:\github project\sitaram-learner\csharpfundamentals\bin\Debug\net6.0\csharpfundamentals.runtimeconfig.json
+C:\github project\sitaram-learner\csharpfundamentals\bin\Debug\net6.0\csharpfundamentals.dll
+C:\github project\sitaram-learner\csharpfundamentals\bin\Debug\net6.0\csharpfundamentals.pdb
+C:\github project\sitaram-learner\csharpfundamentals\obj\Debug\net6.0\csharpfundamentals.dll
+C:\github project\sitaram-learner\csharpfundamentals\obj\Debug\net6.0\refint\csharpfundamentals.dll
+C:\github project\sitaram-learner\csharpfundamentals\obj\Debug\net6.0\csharpfundamentals.pdb
+C:\github project\sitaram-learner\csharpfundamentals\obj\Debug\net6.0\csharpfundamentals.genruntimeconfig.cache
+C:\github project\sitaram-learner\csharpfundamentals\obj\Debug\net6.0\ref\csharpfundamentals.dll
