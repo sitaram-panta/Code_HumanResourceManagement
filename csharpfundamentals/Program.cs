@@ -89,7 +89,7 @@
 // for (int i = 2; i <= 100; i= i +  2)
 // {
 // Console.Write(i + " ");
-    
+
 // }
 
 
@@ -120,7 +120,7 @@
 // int a = 10;
 // int b = 20;
 // int c = 30; 
- 
+
 //  if (a >100)
 //  {
 //     Console.WriteLine("work hard");
@@ -494,7 +494,7 @@
 
 
 // // CW: Decalre a number array with at least 10 items, print squares of each in console.
-// short[] numbers = { 78, 3, 4, 5, 6, 6, 7, 812, 3, 45 };
+//  short[] numbers = { 78, 3, 4, 5, 6, 6, 7, 812, 3, 45 };
 
 // Console.WriteLine("Using for:");
 // for (int i = 0; i < numbers.Length; i++)
@@ -521,34 +521,35 @@
 // // {
 // //     int product = 8 * i;
 // //     Console.WriteLine($"8 * {i} = {product}");
-    
 
+// 1. Print multiplication tables for numbers 10 to 100. Output should look like:
 
+// ```
+// 10 * 1 = 10         11 * 1 = 11         ...         19 * 1 = 19
+// 10 * 2 = 20         11 * 2 = 22         ...         19 * 2 = 38
+// 10 * 3 = 30         11 * 3 = 33         ...         19 * 3 = 57
+// ...                 ...                 ...         ...
+// 10 * 100 = 100      11 * 10 = 110                   19 * 10 = 190
+// 20 * 1 = 20         21 * 1 = 21         ...         29 * 1 = 29
+// 20 * 2 = 40         21 * 2 = 42         ...         29 * 2 = xxx
+// 20 * 3 = 60         21 * 3 = 63         ...         29 * 3 = xxx
+// ...                 ...                 ...         ...
+// 20 * 100 = 200      21 * 10 = 210                   29 * 10 = xxx
+// .........................
+// ```
 
-for (int i = 0; i < 10; i++) 
-{
-  if (i == 4) 
-  {
-   
-    continue;
+// Nested loop
 
-  }
-  Console.WriteLine(i);
-}
+// for (int i = 10; i <= 100; i++)
+// {
+//     System.Console.WriteLine("Table of" + " " + i);
 
+//     for (int j = 1; j <= 10; j++)
+//     {
+//         Console.WriteLine($"{i} * {j} = {i * j}");
+//     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+//     Console.WriteLine("**************\n");
+// }
 
 
