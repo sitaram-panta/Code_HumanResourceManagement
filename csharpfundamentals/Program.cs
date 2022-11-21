@@ -1,27 +1,17 @@
-﻿//  using System;
+﻿
+using System;
 
-// // // Console.WriteLine(employee_Name+ "," +age+ "," +weight+ "," +passport);
-// // // Console.WriteLine("{0},{1},{2},{3},{4}",employee_Name,age,weight,passport,dt);
-// // // Console.WriteLine("Hello, World!");
-// // // DateTime x = DateTime.Now;
-// // // Console.WriteLine(x);
+class program
+{
+    public static void Main()
+    {
+        Conditional_Statement a = new();
+        a.ifelse();
 
-// // // 1. Create 5 variables: first holds employee name, second his age, third his weight in kg, 4th represents if he has passport or not, 5th his date of birth.
+        looping_statement b = new();
+        b.AboutLoops();
 
-// // // 1. Print values of all varialbes created in 1. in console
-
-// // string employee_Name = "sitaram Panta";
-// // byte age =  27;
-// // string weight = "60kg";
-// // bool passport = true;
-// // DateTime dateOfBirth = new DateTime(2052, 10, 23);
-// // Console.WriteLine(employee_Name);
-// // Console.WriteLine(age);
-// // Console.WriteLine(weight);
-// // Console.WriteLine(passport);
-// // Console.WriteLine(dateOfBirth);
-
-// // // object created
+    }
 
 
 // // // if marks is less than 40, print "you failed"
@@ -538,24 +528,18 @@
 // .........................
 // ```
 
-
-// int[] numbers = new int[] {1, 2 ,3 , 4, 5, 6 };
-//  foreach (int num in numbers)
-//  {
-//     System.Console.WriteLine(num);
-//  }
-
 // Nested loop
 
-for (int i = 10; i <= 100; i++)
-{
-    System.Console.WriteLine("Table of" + " " + i);
+// for (int i = 10; i <= 100; i++)
+// {
+//     System.Console.WriteLine("Table of" + " " + i);
 
-    for (int j = 1; j <= 10; j++)
-    {
-        Console.WriteLine($"{i} * {j} = {i * j}");
-    }
+//     for (int j = 1; j <= 10; j++)
+//     {
+//         Console.WriteLine($"{i} * {j} = {i * j}");
+//     }
 
-    Console.WriteLine("**************\n");
-}
+//     Console.WriteLine("**************\n");
+// }
+
 
