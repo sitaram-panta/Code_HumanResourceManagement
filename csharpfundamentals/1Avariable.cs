@@ -1,6 +1,6 @@
 class variable
 {
-    public void Main()
+    public void Aboutvariable()
     {
 //  using System;
 
@@ -14,16 +14,16 @@ class variable
 
 // // // 1. Print values of all varialbes created in 1. in console
 
-// // string employee_Name = "sitaram Panta";
-// // byte age =  27;
-// // string weight = "60kg";
-// // bool passport = true;
-// // DateTime dateOfBirth = new DateTime(2052, 10, 23);
-// // Console.WriteLine(employee_Name);
-// // Console.WriteLine(age);
-// // Console.WriteLine(weight);
-// // Console.WriteLine(passport);
-// // Console.WriteLine(dateOfBirth);
+string employee_Name = "sitaram Panta";
+byte age =  27;
+string weight = "60kg";
+bool passport = true;
+DateTime dateOfBirth = new DateTime(2052, 10, 23);
+Console.WriteLine(employee_Name);
+Console.WriteLine(age);
+Console.WriteLine(weight);
+Console.WriteLine(passport);
+Console.WriteLine(dateOfBirth);
 
 // // // object created
 

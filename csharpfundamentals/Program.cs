@@ -11,8 +11,13 @@ class program
         looping_statement b = new();
         b.AboutLoops();
 
-    }
+        variable c = new();
+        c.Aboutvariable();
 
+
+
+    }
+}
 
 // // // if marks is less than 40, print "you failed"
 // // // if marks is less than 60 and greater than 40, print"you passed with second division"

@@ -8,24 +8,26 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\broaday\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\git practise\\sitaram-learner\\csharpfundamentals\\csharpfundamentals.csproj",
+      "projectUniqueName": "C:\\github project\\sitaram-learner\\csharpfundamentals\\csharpfundamentals.csproj",
       "projectName": "csharpfundamentals",
-      "projectPath": "D:\\git practise\\sitaram-learner\\csharpfundamentals\\csharpfundamentals.csproj",
-      "packagesPath": "C:\\Users\\broaday\\.nuget\\packages\\",
-      "outputPath": "D:\\git practise\\sitaram-learner\\csharpfundamentals\\obj\\",
+      "projectPath": "C:\\github project\\sitaram-learner\\csharpfundamentals\\csharpfundamentals.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\github project\\sitaram-learner\\csharpfundamentals\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\broaday\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
