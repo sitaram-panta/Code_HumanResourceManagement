@@ -538,18 +538,24 @@
 // .........................
 // ```
 
+
+// int[] numbers = new int[] {1, 2 ,3 , 4, 5, 6 };
+//  foreach (int num in numbers)
+//  {
+//     System.Console.WriteLine(num);
+//  }
+
 // Nested loop
 
-// for (int i = 10; i <= 100; i++)
-// {
-//     System.Console.WriteLine("Table of" + " " + i);
+for (int i = 10; i <= 100; i++)
+{
+    System.Console.WriteLine("Table of" + " " + i);
 
-//     for (int j = 1; j <= 10; j++)
-//     {
-//         Console.WriteLine($"{i} * {j} = {i * j}");
-//     }
+    for (int j = 1; j <= 10; j++)
+    {
+        Console.WriteLine($"{i} * {j} = {i * j}");
+    }
 
-//     Console.WriteLine("**************\n");
-// }
-
+    Console.WriteLine("**************\n");
+}
 
