@@ -12,12 +12,21 @@ class program
         b.AboutLoops();
 
         variable c = new();
-        c.Aboutvariable();
+        c.AboutVariable();
 
         Arrays d = new();
         d.LearnArrays();
 
-
+        Methods m = new();
+        m.print();
+        m.PrintSomething("I am at another method");
+        var SUM = m.Add(3434.43, 45343.34, 34343.343);
+        var sum1 = m.Add(34.34, 33.343);
+        var p1 = m.Multiply(5, 6, 7, 8);
+        var p2 = m.Multiply(5, 6, 7, 8, 9);
+        Console.WriteLine($"sum1= {SUM} sum2= {sum1} product1={p1} product2={p2}");
+        byte[] numbers = { 34, 56, 12, 33, 89, 65, 21, 90 };
+        var (minimum, maximum) = m.GetMinMax(numbers);
     }
 }
 
