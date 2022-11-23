@@ -27,7 +27,22 @@ class program
         Console.WriteLine($"sum1= {SUM} sum2= {sum1} product1={p1} product2={p2}");
         byte[] numbers = { 34, 56, 12, 33, 89, 65, 21, 90 };
         var (minimum, maximum) = m.GetMinMax(numbers);
+
+        var av = m.CalculateAverage(34, 2, 5, 7);
+        Console.WriteLine(av);
+        short[] nums = { 34, 45, 56, 56, 34, 34, 34 };
+        var av2 = m.CalculateAverageArray();
+        Console.WriteLine(av2);
+
+
     }
+
+
+
+
+
+
+
 }
 
 
