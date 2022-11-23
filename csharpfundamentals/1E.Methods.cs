@@ -38,23 +38,34 @@ class Methods
         }
         return product;
 
-        // Returns multiple values, takes some arguments
-        public (byte, byte) GetMinMax(byte[] nums)
+    }
+
+    // returns multiple values, takes some arguments
+    public (byte, byte) GetMinMax(byte[] nums)
+    {
+        byte min = byte.MaxValue, max = byte.MinValue;
+        foreach(byte n in nums) // nums={2,3,1,4}
         {
-            byte min = byte.MaxValue max = byte.MinValue;
-            foreach (var n in nums) //
+            if(n < min)
             {
-
+                min = n;
             }
-
-
+            if(n > max)
+            {
+                max = n;
+            }
         }
 
+        return (min, max);
+    }    
 
 
 
 
-    }
+
+
+
+
 
 
 
