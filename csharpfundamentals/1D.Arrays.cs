@@ -9,8 +9,8 @@ class Arrays
         // Let's talk about arrays
 
         // One-dimensional array
-        byte age1 = 23;  
-        byte age2 = 49;
+        // byte age1 = 23;  
+        // byte age2 = 49;
 
         // 1000
         byte[] ages = new byte[1000];
