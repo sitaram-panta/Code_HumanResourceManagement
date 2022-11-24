@@ -44,23 +44,25 @@ class Methods
     public (byte, byte) GetMinMax(byte[] nums)
     {
         byte min = byte.MaxValue, max = byte.MinValue;
-        foreach(byte n in nums) // nums={2,3,1,4}
+        foreach (byte n in nums) // nums={2,3,1,4}
         {
-            if(n < min)
+            if (n < min)
             {
                 min = n;
             }
-            if(n > max)
+            if (n > max)
             {
                 max = n;
             }
         }
 
         return (min, max);
-    }    
+    }
 
 
 
+
+        
 
 
 
