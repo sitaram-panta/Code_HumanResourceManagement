@@ -1,6 +1,7 @@
 ﻿
 using System;
 
+
 class program
 {
     public static void Main()
@@ -34,11 +35,17 @@ class program
         // var av2 = m.CalculateAverageArray();
         // Console.WriteLine(av2);
 
-        Mathmatics obj = new();
-       var output = obj.Add(5, 6);
-        Console.WriteLine(output);
+    //     Mathmatics obj = new();
+    //    var output = obj.Add(5, 6);
+    //     Console.WriteLine(output);
 
     
+        House obj1 = new(4, 40);
+        obj1.Length = 34.4f;
+        obj1.width = 23.34f;
+       var AreaOfRoof1 =obj1.GetAreaOfRoof();
+       System.Console.WriteLine(AreaOfRoof1);
+        
     
     
     
