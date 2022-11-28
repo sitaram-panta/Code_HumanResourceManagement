@@ -17,7 +17,7 @@ class Mansion : House
 
     float swimmingPoolArea;
     float numberOfHelipad;
-    void callservant()
+    void CallServant()
     {
 
         System.Console.WriteLine("Need to clean swimming pool ........");
@@ -29,6 +29,6 @@ class Mansion : House
 class palace: Mansion       //Multi-level inheritance
 {
 
-short numberofRoyalGuards;
+short NumberOfRoyalGuards;
 
-}
+}   
