@@ -5,13 +5,13 @@
 // Add a method whichf returns two values at a time
 
 using System;
-class Mathmatics
-{
+// class Mathmatics
+// {
 
-    int a = 55;
-    string b = "64";
+//     int a = 55;
+//     string b = "64";
 
-    public int Add(int a, int b) => a + b;
+//     public int Add(int a, int b) => a + b;
     
  
     
@@ -22,4 +22,4 @@ class Mathmatics
 
 
 
-}
+// }

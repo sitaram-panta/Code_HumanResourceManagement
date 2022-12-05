@@ -49,8 +49,8 @@ class Collection
         {
             System.Console.WriteLine($"{item.Key} -> {item.Value}");
         }
-        Dictionary<string, int> countryPopulation = new();
 
+        Dictionary<string, int> countryPopulation = new();
         countryPopulation.Add("Nepal", 43343438);
         countryPopulation.Add("India", 4888848);
         countryPopulation.Add("USA", 8383838);
