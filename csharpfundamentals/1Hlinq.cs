@@ -174,15 +174,15 @@ x6.numberOfLegs = 7;
 
 
 
-Animal[] animal = { x, x1, x2, x3, x4, x5, x6 };
+Animal[] animals = { x, x1, x2, x3, x4, x5, x6 };
 
-var domesticAnimal = animal.Where(x => x.domestic == true);
+var domesticAnimal = animals.Where(x => x.domestic == true);
 foreach (var item in domesticAnimal)
 {
     System.Console.WriteLine(item);
 }
 System.Console.WriteLine(".......................");
-var ahmt4l = animal.Where(x => x.numberOfLegs > 4);
+var ahmt4l = animals.Where(x => x.numberOfLegs > 4);
 foreach (var item in ahmt4l)
 {
     System.Console.WriteLine(item);
