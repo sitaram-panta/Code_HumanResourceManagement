@@ -10,5 +10,6 @@
         public DateTime Dob { get; set; }
         public string Designation { get; set; } = string.Empty;
         public string Department { get; set; } = string.Empty;
+        public string Bio { get; set; } = string.Empty;
     }
 }

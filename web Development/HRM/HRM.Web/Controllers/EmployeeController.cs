@@ -39,7 +39,13 @@ public class EmployeeController : Controller
 
         return View();
     }
+    [HttpPost]
+    public IActionResult Add(Employee employee)
+    {
 
+        return RedirectToAction("Index");
+        
+    }
 }
 
 
