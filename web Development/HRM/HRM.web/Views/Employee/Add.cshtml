@@ -1,55 +1,58 @@
-﻿
-<h3>Add New Employee</h3>
+﻿@using HRM.Web.Models;
+@model Employee
 
-<form action="/Employee/Add" method="post	">
-	<div class="mb-3">
-		<label class="form-label">First Name</label>
-		<input type="text" class="form-control">
-	</div>
+<h3 class="text-center">New Employee Form</h3>
 
-	<div class="mb-3">
-		<label class="form-label">Last Name</label>
-		<input type="text" class="form-control">
-	</div>
-	<div class="mb-3">
-		<label class="form-label">Address</label>
-		<textarea class="form-control" rows="3"> </textarea>
-	</div>
+<form action="/Employee/Add" method="post">
+    <div class="mb-3">
+        <label asp-for="FirstName" class="form-label"></label>
+        <input asp-for=FirstName type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for=LastName class="form-label"></label>
+        <input asp-for=LastName type="text" class="form-control">
+    </div>
 
+    <div class="mb-3">
+        <label asp-for=Gender class="form-label"></label>
+        <div class="form-check form-check-inline">
+            <input asp-for=Gender class="form-check-input" type="radio" value="m">
+            <label asp-for=Gender class="form-check-label">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input asp-for=Gender class="form-check-input" type="radio" value="f">
+            <label asp-for=Gender class="form-check-label">Female</label>
+        </div>
+        <div asp-for=Gender class="form-check form-check-inline">
+            <input asp-for=Gender class="form-check-input" type="radio" value="o">
+            <label asp-for=Gender class="form-check-label">Others</label>
+        </div>
+    </div>
 
-	<div class="mb-3">
-		<label class="form-label">Date Of Birth</label>
-		<input type="date" class="form-control">
-	</div>
+    <div class="mb-3">
+        <label asp-for=Address class="form-label"></label>
+        <textarea asp-for=Address class="form-control" rows="3"></textarea>
+    </div>
 
-	<div class="mb-3">
-		<label class="form-label">Gender</label>
-		<div class="form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="Gender" value="m">
-			<label class="form-check-label" for="inlineRadio1">Male</label>
-		</div>
-		<div class="form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="Gender" value="F">
-			<label class="form-check-label" for="inlineRadio2">Female</label>
-		</div>
-		<div class="form-check form-check-inline">
-			<input class="form-check-input" type="radio" name="Gender" value="O">
-			<label class="form-check-label" for="inlineRadio3">Others</label>
-		</div>
-	</div>
-	<div class="mb-3">
-		<label class="form-label">Designation</label>
-		<input type="text" class="form-control">
-	</div>
-	<div class="mb-3">
-		<label class="form-label">Department</label>
-		<input type="text" class="form-control">
-	</div>
-	<div class="mb-3">
-		<label class="form-label">Bio</label>
-		<textarea class="form-control" rows="3"> </textarea>
-	</div>
+    <div class="mb-3">
+        <label asp-for=Dob class="form-label"></label>
+        <input asp-for=Dob type="date" class="form-control">
+    </div>
 
+    <div class="mb-3">
+        <label asp-for=Designation class="form-label"></label>
+        <input asp-for=Designation type="text" class="form-control">
+    </div>
 
-	<button type="submit" class="btn btn-primary"><i class="bi bi-arrow-90deg-down"></i> Submit</button>
+    <div class="mb-3">
+        <label asp-for=Department class="form-label">Department</label>
+        <input asp-for=Department type="text" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for=Bio class="form-label">Bio</label>
+        <textarea asp-for=Bio class="form-control" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Save</button>
 </form>

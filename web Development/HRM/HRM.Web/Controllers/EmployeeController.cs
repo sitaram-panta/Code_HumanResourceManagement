@@ -1,54 +1,29 @@
-﻿using HRM.Web.Models;
-using Microsoft.AspNetCore.Http;
+﻿using HRM.Web.Data;
+using HRM.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HRM.Web.Controllers;
-
 public class EmployeeController : Controller
 {
+    HRMDBContext db = new();
     public IActionResult Index()
     {
-        Employee e1 = new()
-        {
-            FirstName = "Bishnu",
-            LastName = "Rawal",
-            Address = "Ktm",
-            Gender = 'M',
-            Dob = new DateTime(1960, 12, 12),
-            Department = "R&D1",
-            Designation = "Software Developer"
-        };
-        Employee e2 = new()
-        {
-            FirstName = "Krishna",
-            LastName = "Rawal",
-            Address = "Bhaktapur",
-            Gender = 'F',
-            Dob = new DateTime(1970, 12, 12),
-            Department = "Compliance",
-            Designation = "Legal Advisor"
-        };
-
-        List<Employee> employees = new() { e1, e2 };
+        var employees = db.Employees.ToList();
 
         return View(employees);
     }
 
     public IActionResult Add()
     {
-
         return View();
     }
+
     [HttpPost]
     public IActionResult Add(Employee employee)
     {
+        db.Employees.Add(employee);
+        db.SaveChanges();
 
         return RedirectToAction("Index");
-        
     }
 }
-
-
-
-
-
