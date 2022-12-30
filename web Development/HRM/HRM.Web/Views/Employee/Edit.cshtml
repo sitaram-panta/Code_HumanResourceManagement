@@ -1,14 +1,8 @@
 ﻿@using HRM.Web.Models;
-@using HRM.Web.Enums;
 @model Employee
 
-@{
-    var departments = ViewData["DepartmentList"] as IEnumerable<SelectListItem>;
-}
-
-<h3 class="text-center">New Employee Form</h3>
-
-<form class="row" action="/Employee/Add" method="post">
+<form class="row" action="/Employee/Edit" method="post">
+    <input type="hidden" asp-for="ID" />
     <div class="mb-3 col-6">
         <label asp-for="FirstName" class="form-label"></label>
         <span class="text-danger" asp-validation-for="FirstName"></span>
@@ -23,15 +17,15 @@
         <label asp-for=Gender class="form-label"></label>
         <div>
             <div class="form-check form-check-inline">
-                <input asp-for=Gender class="form-check-input" type="radio" value="@Gender.Male">
+                <input asp-for=Gender class="form-check-input" type="radio" value="m">
                 <label asp-for=Gender class="form-check-label">Male</label>
             </div>
             <div class="form-check form-check-inline">
-                <input asp-for=Gender class="form-check-input" type="radio" value="@Gender.Female">
+                <input asp-for=Gender class="form-check-input" type="radio" value="f">
                 <label asp-for=Gender class="form-check-label">Female</label>
             </div>
             <div asp-for=Gender class="form-check form-check-inline">
-                <input asp-for=Gender class="form-check-input" type="radio" value="@Gender.Others">
+                <input asp-for=Gender class="form-check-input" type="radio" value="o">
                 <label asp-for=Gender class="form-check-label">Others</label>
             </div>
         </div>
@@ -48,9 +42,7 @@
 
     <div class="mb-3 col-6">
         <label asp-for=Department class="form-label">Department</label>
-        <select asp-for=Department asp-items=departments class="form-control">
-            <option selected>Select Department ...</option>
-        </select>
+        <input asp-for=Department type="text" class="form-control">
     </div>
 
     <div class="mb-3 col-6">
@@ -61,5 +53,6 @@
         <label asp-for=Bio class="form-label">Bio</label>
         <textarea asp-for=Bio class="form-control" rows="3"></textarea>
     </div>
-    <button type="submit" class="btn btn-success"><i class="bi bi-save"></i> Save</button>
+    <a class="btn btn-danger w-25" href="/employee/index"><i class="bi bi-x-circle"></i> Cancel</a>
+    <button type="submit" class="btn btn-success w-25 ms-2"><i class="bi bi-save"></i> Update</button>
 </form>
