@@ -1,0 +1,21 @@
+﻿@model List<Employee>
+@{
+    ViewData["Title"] = "Employee Contacts";
+}
+<h2>Employee Details</h2>
+
+<table class="table">
+    <tr>
+        <th>Employee Name</th>
+        <th>Phone Number</th>
+        <th>Address</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Phone</td>
+            <td>@item.Address</td>
+        </tr>
+    }
+</table>

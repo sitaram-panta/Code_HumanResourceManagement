@@ -1,0 +1,15 @@
+﻿@model string[]
+
+@{
+    ViewData["Title"] = "Employee List";
+}
+
+<h2>Employees List</h2>
+
+
+<ol>
+    @foreach (var name in Model)
+    {
+        <li>@name</li>
+    }
+</ol>
