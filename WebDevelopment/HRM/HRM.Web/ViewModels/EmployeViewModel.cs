@@ -1,12 +1,11 @@
 ﻿using HRM.Web.Enums;
-using HRM.Web.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HRM.Models;
+namespace HRM.ViewModels;
 
-public class Employee
-{    
+public class EmployeeViewModel
+{
     public int Id { get; set; }
 
     [Display(Name = "First Name")]
@@ -22,15 +21,11 @@ public class Employee
     [Display(Name = "Date Of Birth")]
     public DateTime? Dob { get; set; }
     public string? Bio { get; set; } = string.Empty;
-
-    [NotMapped]
     public IFormFile ProfileImage { get; set; }
-
     public string? ProfileImageName { get; set; }
 
-    public Department? Department { get; set; }
     public int DepartmentId { get; set; }
-
-    public Designation? Designation { get; set; }
+    public string? DepartmentName { get; set; }
     public int DesignationId { get; set; }
+    public string? DesignationTitle { get; set; }
 }

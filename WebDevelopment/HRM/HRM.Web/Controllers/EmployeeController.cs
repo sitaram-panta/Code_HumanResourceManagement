@@ -1,5 +1,6 @@
 ﻿using HRM.Models;
 using HRM.Web.Data;
+using HRM.Web.Mapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,8 +15,9 @@ public class EmployeeController : Controller
             return Problem("Employees dbset don't exist");
 
         var employees = db.Employees.Include(e => e.Department).Include(e => e.Designation).ToList();
+        var employeesviewModels = employees.ToViewModel();
 
-        return View(employees);
+        return View(employeesviewModels);
     }
 
     public async Task<IActionResult> Add()
