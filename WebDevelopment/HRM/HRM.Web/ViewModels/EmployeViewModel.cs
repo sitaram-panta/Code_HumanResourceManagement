@@ -28,4 +28,5 @@ public class EmployeeViewModel
     public string? DepartmentName { get; set; }
     public int DesignationId { get; set; }
     public string? DesignationTitle { get; set; }
+    public int Age { get; set; }
 }

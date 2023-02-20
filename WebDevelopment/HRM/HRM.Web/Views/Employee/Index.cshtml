@@ -11,7 +11,9 @@
         <th>Department</th>
         <th>Designation</th>
         <th>Bio</th>
-        <th></th>
+        <th>AGE</th>
+        <th>Actions</th>
+        
     </tr>
     @foreach (var item in Model)
     {
@@ -26,6 +28,7 @@
             <td>@item.DepartmentName</td>
             <td>@item.DesignationTitle</td>
             <td>@item.Bio</td>
+            <td>@item.Age</td>
             <td>
                 <a href="/employee/edit/@item.Id"><i class="bi bi-pencil-fill text-warning"></i></a>
                 <a href="/employee/delete/@item.Id"><i class="bi bi-trash3-fill text-danger"></i></a>

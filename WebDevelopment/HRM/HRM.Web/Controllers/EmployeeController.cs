@@ -9,6 +9,7 @@ namespace HRM.Web.Controllers;
 public class EmployeeController : Controller
 {
     HRMDbContext db = new();
+  
     public IActionResult Index()
     {
         if (db.Employees == null)
@@ -16,6 +17,10 @@ public class EmployeeController : Controller
 
         var employees = db.Employees.Include(e => e.Department).Include(e => e.Designation).ToList();
         var employeesviewModels = employees.ToViewModel();
+       
+ 
+      
+        
 
         return View(employeesviewModels);
     }
@@ -42,7 +47,9 @@ public class EmployeeController : Controller
             // Add employee record to db
             employee.ProfileImageName = profileRelativePath;
 
-            await db.Employees.AddAsync(employee);
+
+             await db.Employees.AddAsync(employee);
+
             await db.SaveChangesAsync();
 
             return RedirectToAction("Index");
@@ -71,7 +78,7 @@ public class EmployeeController : Controller
             var relativePath = SaveProfileImage(employee.ProfileImage);
             employee.ProfileImageName = relativePath;
 
-            db.Employees.Update(employee);
+           db.Employees.Update(employee);
             db.SaveChanges();
 
             return RedirectToAction("Index");
