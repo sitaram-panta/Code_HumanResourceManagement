@@ -1,4 +1,5 @@
 ﻿using HRM.Models;
+using HRM.ViewModels;
 using HRM.Web.Data;
 using HRM.Web.Mapper;
 using Microsoft.AspNetCore.Mvc;
@@ -39,14 +40,14 @@ public class EmployeeController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Add(Employee employee)
+    public async Task<IActionResult> Add(EmployeeViewModel employeeViewModel)
     {
         if (ModelState.IsValid)
         {
-            var profileRelativePath = SaveProfileImage(employee.ProfileImage);
+            var profileRelativePath = SaveProfileImage(employeeViewModel.ProfileImage);
             // Add employee record to db
-            employee.ProfileImageName = profileRelativePath;
-
+            employeeViewModel.ProfileImageName = profileRelativePath;
+            var employee = employeeViewModel.ToModel();
 
              await db.Employees.AddAsync(employee);
 
@@ -55,7 +56,7 @@ public class EmployeeController : Controller
             return RedirectToAction("Index");
         }
 
-        return View(employee);
+        return View(employeeViewModel);
     }
 
     public IActionResult Edit(int? id)
@@ -63,7 +64,7 @@ public class EmployeeController : Controller
         if (id == null)
             return NotFound();
 
-        var employee = db.Find<Employee>(id);
+        var employee = db.Find<EmployeeViewModel>(id);
         if (employee is null)
             return NotFound();
 
@@ -74,13 +75,14 @@ public class EmployeeController : Controller
     public IActionResult Edit(Employee employee)
     {
         if (ModelState.IsValid)
-        {
-            var relativePath = SaveProfileImage(employee.ProfileImage);
-            employee.ProfileImageName = relativePath;
+        { 
+        //    var relativePath = SaveProfileImage(employeeViewModel.ProfileImage)
+        //    .ProfileImageName = relativePath;
+        //    var employeelm = employee.ToViewModel();
 
            db.Employees.Update(employee);
             db.SaveChanges();
-
+            
             return RedirectToAction("Index");
         }
 
@@ -89,13 +91,14 @@ public class EmployeeController : Controller
 
     public IActionResult Delete(int id)
     {
-        var employee = db.Find<Employee>(id);
+        var employee = db.Find<EmployeeViewModel>(id);
         return View(employee);
     }
 
     [HttpPost]
     public async Task<IActionResult> Delete(Employee employee)
     {
+        
         db.Employees.Remove(employee);
         await db.SaveChangesAsync();
 
