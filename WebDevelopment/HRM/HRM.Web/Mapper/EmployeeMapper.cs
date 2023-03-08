@@ -16,7 +16,9 @@ public static class EmployeeMapper
             Bio = employee.Bio,
             ProfileImageName = employee.ProfileImageName,
             DepartmentName = employee.Department?.Name ?? "N/A",
-            DesignationTitle = employee.Designation?.Title ?? "N/A"
+            DesignationTitle = employee.Designation?.Title ?? "N/A",
+            DepartmentId=employee.DepartmentId,
+            DesignationId=employee.DesignationId
         };
 
     public static List<EmployeeViewModel> ToViewModel(this List<Employee> employees) =>

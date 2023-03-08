@@ -21,7 +21,7 @@ public class EmployeeViewModel
     [Display(Name = "Date Of Birth")]
     public DateTime? Dob { get; set; }
     public string? Bio { get; set; } = string.Empty;
-    public IFormFile ProfileImage { get; set; }
+    public IFormFile profileImage { get; set; }
     public string? ProfileImageName { get; set; }
 
     public int DepartmentId { get; set; }

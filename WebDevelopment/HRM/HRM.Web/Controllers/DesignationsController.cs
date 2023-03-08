@@ -22,9 +22,9 @@ namespace HRM.Web.Controllers
         // GET: Designations
         public async Task<IActionResult> Index()
         {
-              return _context.Designations != null ? 
-                          View(await _context.Designations.ToListAsync()) :
-                          Problem("Entity set 'HRMDbContext.Designations'  is null.");
+            return _context.Designations != null ?
+                        View(await _context.Designations.ToListAsync()) :
+                        Problem("Entity set 'HRMDbContext.Designations'  is null.");
         }
 
         // GET: Designations/Details/5
@@ -88,7 +88,7 @@ namespace HRM.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Role")] Designation designation)
+        public async Task<IActionResult> Edit(int id, Designation designation)
         {
             if (id != designation.Id)
             {
@@ -150,14 +150,14 @@ namespace HRM.Web.Controllers
             {
                 _context.Designations.Remove(designation);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DesignationExists(int id)
         {
-          return (_context.Designations?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Designations?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

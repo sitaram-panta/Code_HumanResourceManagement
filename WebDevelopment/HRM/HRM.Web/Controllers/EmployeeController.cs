@@ -2,6 +2,7 @@
 using HRM.ViewModels;
 using HRM.Web.Data;
 using HRM.Web.Mapper;
+using HRM.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,20 +11,17 @@ namespace HRM.Web.Controllers;
 public class EmployeeController : Controller
 {
     HRMDbContext db = new();
-  
+    
+
     public IActionResult Index()
     {
         if (db.Employees == null)
             return Problem("Employees dbset don't exist");
 
         var employees = db.Employees.Include(e => e.Department).Include(e => e.Designation).ToList();
-        var employeesviewModels = employees.ToViewModel();
-       
- 
-      
-        
+        var employeesViewModels = employees.ToViewModel();
 
-        return View(employeesviewModels);
+        return View(employeesViewModels);
     }
 
     public async Task<IActionResult> Add()
@@ -44,12 +42,12 @@ public class EmployeeController : Controller
     {
         if (ModelState.IsValid)
         {
-            var profileRelativePath = SaveProfileImage(employeeViewModel.ProfileImage);
+            var profileRelativePath = SaveProfileImage(employeeViewModel.profileImage);
             // Add employee record to db
             employeeViewModel.ProfileImageName = profileRelativePath;
             var employee = employeeViewModel.ToModel();
 
-             await db.Employees.AddAsync(employee);
+            await db.Employees.AddAsync(employee);
 
             await db.SaveChangesAsync();
 
@@ -64,29 +62,44 @@ public class EmployeeController : Controller
         if (id == null)
             return NotFound();
 
-        var employee = db.Find<EmployeeViewModel>(id);
+        var employee = db.Employees.Include(e => e.Department)
+          .Include(e => e.Designation)
+          .FirstOrDefault(e => e.Id == id);
+        
+
+        var employeeViewModel = employee.ToViewModel();
         if (employee is null)
             return NotFound();
 
-        return View(employee);
+        var departments =  db.Departments.ToList();
+        var selectListItems = departments.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
+        ViewData["DepartmentList"] = selectListItems;
+
+        var designations = db.Designations
+            .Select(d => new SelectListItem { Text = d.Title, Value = d.Id.ToString() }).ToList();
+        ViewData["DesignationList"] = designations;
+
+
+        return View(employeeViewModel);
     }
 
     [HttpPost]
-    public IActionResult Edit(Employee employee)
+
+    public IActionResult Edit(EmployeeViewModel employeeViewModel)
     {
-        if (ModelState.IsValid)
-        { 
-        //    var relativePath = SaveProfileImage(employeeViewModel.ProfileImage)
-        //    .ProfileImageName = relativePath;
-        //    var employeelm = employee.ToViewModel();
 
-           db.Employees.Update(employee);
-            db.SaveChanges();
-            
-            return RedirectToAction("Index");
-        }
 
-        return View(employee);
+        //var relativePath = SaveProfileImage(employeeViewModel.profileImage);
+        //employeeViewModel.ProfileImageName = relativePath;
+
+        var employeevm = employeeViewModel.ToModel();
+        db.Update(employeevm);
+        db.SaveChanges();
+
+        return RedirectToAction(nameof(Index));
+        
+
+
     }
 
     public IActionResult Delete(int id)
@@ -98,7 +111,7 @@ public class EmployeeController : Controller
     [HttpPost]
     public async Task<IActionResult> Delete(Employee employee)
     {
-        
+
         db.Employees.Remove(employee);
         await db.SaveChangesAsync();
 
