@@ -8,17 +8,18 @@ public class EmployeeViewModel
 {
     public int Id { get; set; }
 
-    [Display(Name = "First Name")]
-    [MinLength(2)]
+    [Display(Name = "First Name"), MinLength(2), MaxLength(50)]
+    
     public string FirstName { get; set; } = string.Empty;
 
-    [Display(Name = "Last Name")]
+    [Display(Name = "Last Name"), MinLength(3), MaxLength(20)]
     public string LastName { get; set; } = string.Empty;
 
     public Gender Gender { get; set; } = Gender.Male;
     public string? Address { get; set; }
 
     [Display(Name = "Date Of Birth")]
+    [Required]
     public DateTime? Dob { get; set; }
     public string? Bio { get; set; } = string.Empty;
     public IFormFile profileImage { get; set; }

@@ -103,20 +103,30 @@ public class EmployeeController : Controller
     }
 
     public IActionResult Delete(int id)
-    {
-        var employee = db.Find<EmployeeViewModel>(id);
-        return View(employee);
+    {   
+        var employee= db.Employees.Find(id);
+        var employeemodel = employee.ToViewModel();
+        
+        return View(employeemodel);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Delete(Employee employee)
+    public async Task<IActionResult> Delete(EmployeeViewModel employeeViewModel)
     {
+   
+        var employee = employeeViewModel.ToModel();
+
+        if (employee == null)
+        {
+            return NotFound();
+        }
 
         db.Employees.Remove(employee);
         await db.SaveChangesAsync();
 
         return RedirectToAction("Index");
     }
+
 
     private string SaveProfileImage(IFormFile file)
     {

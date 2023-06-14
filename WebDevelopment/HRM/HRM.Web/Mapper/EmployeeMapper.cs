@@ -19,6 +19,7 @@ public static class EmployeeMapper
             DesignationTitle = employee.Designation?.Title ?? "N/A",
             DepartmentId=employee.DepartmentId,
             DesignationId=employee.DesignationId
+            
         };
 
     public static List<EmployeeViewModel> ToViewModel(this List<Employee> employees) =>

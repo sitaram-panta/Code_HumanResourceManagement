@@ -1,6 +1,6 @@
 ﻿@using HRM.Models;
 @using HRM.Web.Enums;
-@model EmployeeViewModel 
+@model EmployeeViewModel
 
 @{
     var departments = ViewData["DepartmentList"] as IEnumerable<SelectListItem>;
@@ -8,6 +8,7 @@
 }
 
 <h3 class="text-center">New Employee Form</h3>
+<br/>
 
 <form class="row" action="/Employee/Add" method="post" enctype="multipart/form-data">
     <div class="mb-3 col-6">
@@ -17,6 +18,7 @@
     </div>
     <div class="mb-3 col-6">
         <label asp-for=LastName class="form-label"></label>
+        <span class="text-danger" asp-validation-for="LastName"></span>
         <input asp-for=LastName type="text" class="form-control">
     </div>
 
@@ -37,14 +39,20 @@
             </div>
         </div>
     </div>
-    <div class="mb-3 col-8">
+    <div class="mb-3 col-4">
         <label asp-for=Dob class="form-label"></label>
+        <span class="text-danger" asp-validation-for="Dob"></span>
         <input asp-for=Dob type="date" class="form-control">
+    </div>
+    <div class="mb-3 col-4">
+        <label asp-for="Age" class="form-label"></label>
+        <input asp-for=Age class="form-control">
     </div>
 
     <div class="mb-3 col-6">
         <label asp-for=DesignationTitle class="form-label"></label>
         <select asp-for=DesignationId asp-items=designations class="form-control">
+            <option selected>Select Designation....</option>
         </select>
     </div>
 
