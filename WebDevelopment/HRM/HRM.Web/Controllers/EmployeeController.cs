@@ -1,8 +1,6 @@
-﻿using HRM.Models;
-using HRM.ViewModels;
+﻿using HRM.ViewModels;
 using HRM.Web.Data;
 using HRM.Web.Mapper;
-using HRM.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,15 +8,22 @@ using Microsoft.EntityFrameworkCore;
 namespace HRM.Web.Controllers;
 public class EmployeeController : Controller
 {
-    HRMDbContext db = new();
-    
+    private readonly HRMDbContext db;
+    public EmployeeController(HRMDbContext _db)
+    {
+        db = _db;
+    }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
         if (db.Employees == null)
             return Problem("Employees dbset don't exist");
 
-        var employees = db.Employees.Include(e => e.Department).Include(e => e.Designation).ToList();
+        var employees = await db.Employees.
+            Include(e => e.Department).
+            Include(e => e.Designation).
+            ToListAsync();
+
         var employeesViewModels = employees.ToViewModel();
 
         return View(employeesViewModels);
@@ -40,21 +45,16 @@ public class EmployeeController : Controller
     [HttpPost]
     public async Task<IActionResult> Add(EmployeeViewModel employeeViewModel)
     {
-        if (ModelState.IsValid)
-        {
-            var profileRelativePath = SaveProfileImage(employeeViewModel.profileImage);
-            // Add employee record to db
-            employeeViewModel.ProfileImageName = profileRelativePath;
-            var employee = employeeViewModel.ToModel();
+        var profileRelativePath = SaveProfileImage(employeeViewModel.profileImage);
+        employeeViewModel.ProfileImageName = profileRelativePath;
+        var employee = employeeViewModel.ToModel();
 
-            await db.Employees.AddAsync(employee);
+        await db.Employees.AddAsync(employee);
 
-            await db.SaveChangesAsync();
+        await db.SaveChangesAsync();
 
-            return RedirectToAction("Index");
-        }
+        return RedirectToAction("Index");
 
-        return View(employeeViewModel);
     }
 
     public IActionResult Edit(int? id)
@@ -62,16 +62,17 @@ public class EmployeeController : Controller
         if (id == null)
             return NotFound();
 
-        var employee = db.Employees.Include(e => e.Department)
+        var employee = db.Employees
+           .Include(e => e.Department)
           .Include(e => e.Designation)
           .FirstOrDefault(e => e.Id == id);
-        
 
-        var employeeViewModel = employee.ToViewModel();
         if (employee is null)
             return NotFound();
 
-        var departments =  db.Departments.ToList();
+        var employeeViewModel = employee.ToViewModel();
+       
+        var departments = db.Departments.ToList();
         var selectListItems = departments.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
         ViewData["DepartmentList"] = selectListItems;
 
@@ -87,33 +88,25 @@ public class EmployeeController : Controller
 
     public IActionResult Edit(EmployeeViewModel employeeViewModel)
     {
-
-
-        //var relativePath = SaveProfileImage(employeeViewModel.profileImage);
-        //employeeViewModel.ProfileImageName = relativePath;
-
         var employeevm = employeeViewModel.ToModel();
         db.Update(employeevm);
         db.SaveChanges();
 
         return RedirectToAction(nameof(Index));
-        
-
-
     }
 
     public IActionResult Delete(int id)
-    {   
-        var employee= db.Employees.Find(id);
+    {
+        var employee = db.Employees.Find(id);
         var employeemodel = employee.ToViewModel();
-        
+
         return View(employeemodel);
     }
 
     [HttpPost]
     public async Task<IActionResult> Delete(EmployeeViewModel employeeViewModel)
     {
-   
+
         var employee = employeeViewModel.ToModel();
 
         if (employee == null)
@@ -130,8 +123,7 @@ public class EmployeeController : Controller
 
     private string SaveProfileImage(IFormFile file)
     {
-        // Save image to "profiles" folder        
-        var fileName = file.FileName;  //my.photo.jpg
+        var fileName = file.FileName; 
         var indexOfDot = fileName.LastIndexOf(".");
         var fileExtenstion = fileName.Substring(indexOfDot);
         var profileRelativePath = $"images/profiles/{Guid.NewGuid()}{fileExtenstion}";

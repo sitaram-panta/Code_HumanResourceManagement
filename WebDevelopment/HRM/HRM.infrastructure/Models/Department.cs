@@ -1,5 +1,4 @@
 ﻿using HRM.Models;
-
 namespace HRM.Web.Models
 {
     public class Department
@@ -8,7 +7,6 @@ namespace HRM.Web.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public DateTime Established { get; set; }
-
-        public List<Employee>? Employees { get; set; }
+        public ICollection<Employee> Employees { get; set; }
     }
 }

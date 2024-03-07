@@ -1,7 +1,6 @@
-﻿    using HRM.Models;
+﻿using HRM.Models;
 using HRM.Web.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace HRM.API.Controllers
 {
@@ -11,15 +10,14 @@ namespace HRM.API.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly HRMDbContext dbContext;
-        public EmployeesController(HRMDbContext dbContext)
+        public EmployeesController(HRMDbContext _dbContext)
         {
-            this.dbContext = dbContext;
+            dbContext = _dbContext;
         }
 
         [HttpGet]
         public List<Employee> Get()
         {
-            HRMDbContext dbContext = new HRMDbContext();
             var employees = dbContext.Employees.ToList();
 
 
@@ -31,7 +29,6 @@ namespace HRM.API.Controllers
         [HttpGet("{id}")]
         public async Task<Employee> Get(int id)
         {
-            HRMDbContext dbContext = new HRMDbContext();
             var employee = await dbContext.Employees.FindAsync(id);
             return employee;
 

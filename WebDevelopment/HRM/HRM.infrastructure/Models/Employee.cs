@@ -1,8 +1,6 @@
 ﻿using HRM.Web.Enums;
 using HRM.Web.Models;
-using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HRM.Models;
 
@@ -12,11 +10,13 @@ public class Employee
 
     [Display(Name = "First Name")]
     [MinLength(2)]
+    [Required]
     public string FirstName { get; set; } = string.Empty;
 
     [Display(Name = "Last Name")]
+    [Required]
     public string LastName { get; set; } = string.Empty;
-
+    [Required]
     public Gender Gender { get; set; } = Gender.Male;
     public string? Address { get; set; }
 
@@ -26,9 +26,9 @@ public class Employee
 
     public string? ProfileImageName { get; set; }
 
-    public Department? Department { get; set; }
     public int DepartmentId { get; set; }
+    public virtual  Department Department { get; set; }
 
-    public Designation? Designation { get; set; }
     public int DesignationId { get; set; }
+    public virtual  Designation Designation { get; set; }
 }
